@@ -1,5 +1,6 @@
 package com.delta.familyradar;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,13 +8,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OtherFragment#newInstance} factory method to
+ * Use the {@link NewGroupFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OtherFragment extends Fragment {
+public class NewGroupFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +27,7 @@ public class OtherFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OtherFragment() {
+    public NewGroupFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +37,11 @@ public class OtherFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OtherFragment.
+     * @return A new instance of fragment NewGroupFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static OtherFragment newInstance(String param1, String param2) {
-        OtherFragment fragment = new OtherFragment();
+    public static NewGroupFragment newInstance(String param1, String param2) {
+        NewGroupFragment fragment = new NewGroupFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -53,12 +56,20 @@ public class OtherFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getActivity().getWindow();
+            window.setNavigationBarColor(getResources().getColor(R.color.main_purpule));
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.main_purpule));
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_other, container, false);
+                View view= inflater.inflate(R.layout.fragment_new_group, container, false);
+
+        return view;
     }
 }

@@ -50,7 +50,7 @@ int currentApiVersion;
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },2000);
     }
     @SuppressLint("NewApi")
     @Override

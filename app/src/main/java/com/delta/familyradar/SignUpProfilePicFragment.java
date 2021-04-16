@@ -1,17 +1,17 @@
 package com.delta.familyradar;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import butterknife.BindView;
@@ -20,13 +20,15 @@ import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MainFragment#newInstance} factory method to
+ * Use the {@link SignUpProfilePicFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFragment extends Fragment {
-    @BindView(R.id.button3)
-    Button button;
-    Unbinder unbinder;
+public class SignUpProfilePicFragment extends Fragment {
+    @BindView(R.id.signUpNextbutton5)
+    Button nextButton;
+    @BindView(R.id.signUpSkipButton2)
+    Button skipButton;
+    private Unbinder unbinder;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +39,7 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MainFragment() {
+    public SignUpProfilePicFragment() {
         // Required empty public constructor
     }
 
@@ -47,11 +49,11 @@ public class MainFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
+     * @return A new instance of fragment SignUpProfilePicFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MainFragment newInstance(String param1, String param2) {
-        MainFragment fragment = new MainFragment();
+    public static SignUpProfilePicFragment newInstance(String param1, String param2) {
+        SignUpProfilePicFragment fragment = new SignUpProfilePicFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,32 +68,36 @@ public class MainFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getActivity().getWindow();
+            window.setNavigationBarColor(getResources().getColor(R.color.main_purpule));
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.main_purpule));
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_up_profile_pic, container, false);
         unbinder = ButterKnife.bind(this, view);
-
-
-
-        button = view.findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                NavDirections action = MainFragmentDirections.actionMainFragmentToLoginOrSignupFragment();
-//                Navigation.findNavController(view).navigate(action);
+                NavDirections action = SignUpProfilePicFragmentDirections.actionSignUpProfilePicFragmentToNewGroupFragment();
+                Navigation.findNavController(view).navigate(action);
             }
         });
-
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavDirections action = SignUpProfilePicFragmentDirections.actionSignUpProfilePicFragmentToNewGroupFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
         return view;
     }
-
 
     @Override
     public void onDestroy() {
