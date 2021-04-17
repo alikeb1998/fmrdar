@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewGroupFragment">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddByIdFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -16,12 +15,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/create_new_group"
+            android:text="@string/add_by_id"
             android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,41 +29,27 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/addMembers"
+        android:id="@+id/requestButton"
         style="@style/AppTheme.RoundedCornerMaterialButton"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/next1"
+        android:text="@string/request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
-
-    <Button
-        android:id="@+id/createGroups"
-        style="@style/AppTheme.RoundedCornerMaterialButton"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/create"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addMembers" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <EditText
-        android:id="@+id/grupName"
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:ems="10"
-        android:hint="Group Namw"
+        android:hint="USERNAME"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/addMembers"
+        app:layout_constraintBottom_toTopOf="@+id/requestButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

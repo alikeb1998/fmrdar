@@ -76,10 +76,34 @@
         <action
             android:id="@+id/action_newGroupFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_newGroupFragment_to_addByIdFragment"
+            app:destination="@id/addByIdFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.delta.familyradar.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addByIdFragment"
+            app:destination="@id/addByIdFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_reqsFragment"
+            app:destination="@id/reqsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addByIdFragment"
+        android:name="com.delta.familyradar.AddByIdFragment"
+        android:label="fragment_add_by_id"
+        tools:layout="@layout/fragment_add_by_id" >
+        <action
+            android:id="@+id/action_addByIdFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reqsFragment"
+        android:name="com.delta.familyradar.ReqsFragment"
+        android:label="fragment_reqs"
+        tools:layout="@layout/fragment_reqs" />
 </navigation>

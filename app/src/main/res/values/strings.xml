@@ -23,4 +23,8 @@
     <string name="play_again">Play Again</string>
     <string name="log_in">Log In</string>
     <string name="next1">Next</string>
+    <string name="create_new_group">Create new group</string>
+    <string name="create">create</string>
+    <string name="add_by_id">Add By Id</string>
+    <string name="request">Request</string>
 </resources>

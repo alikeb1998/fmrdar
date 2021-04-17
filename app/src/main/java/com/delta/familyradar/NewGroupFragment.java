@@ -4,12 +4,20 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,7 +25,11 @@ import android.view.WindowManager;
  * create an instance of this fragment.
  */
 public class NewGroupFragment extends Fragment {
-
+    @BindView(R.id.addMembers)
+    Button addButton;
+    @BindView(R.id.createGroups)
+    Button createButton;
+    private Unbinder unbinder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -68,8 +80,28 @@ public class NewGroupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-                View view= inflater.inflate(R.layout.fragment_new_group, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_new_group, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavDirections action = NewGroupFragmentDirections.actionNewGroupFragmentToAddByIdFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavDirections action = NewGroupFragmentDirections.actionNewGroupFragmentToMainFragment();
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
         return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }
