@@ -76,9 +76,6 @@
         <action
             android:id="@+id/action_newGroupFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
-        <action
-            android:id="@+id/action_newGroupFragment_to_addByIdFragment"
-            app:destination="@id/addByIdFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -91,6 +88,12 @@
         <action
             android:id="@+id/action_mainFragment_to_reqsFragment"
             app:destination="@id/reqsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_placesFragment"
+            app:destination="@id/placesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <fragment
         android:id="@+id/addByIdFragment"
@@ -106,4 +109,32 @@
         android:name="com.delta.familyradar.ReqsFragment"
         android:label="fragment_reqs"
         tools:layout="@layout/fragment_reqs" />
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.delta.familyradar.PlacesFragment"
+        android:label="fragment_places"
+        tools:layout="@layout/fragment_places" >
+        <action
+            android:id="@+id/action_placesFragment_to_searchPlaceFragment"
+            app:destination="@id/searchPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPlaceFragment"
+        android:name="com.delta.familyradar.SearchPlaceFragment"
+        android:label="fragment_search_place"
+        tools:layout="@layout/fragment_search_place" >
+        <action
+            android:id="@+id/action_searchPlaceFragment_to_locateOnMapFragment"
+            app:destination="@id/locateOnMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locateOnMapFragment"
+        android:name="com.delta.familyradar.LocateOnMapFragment"
+        android:label="fragment_locate_on_map"
+        tools:layout="@layout/fragment_locate_on_map" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.delta.familyradar.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>

@@ -25,8 +25,7 @@ import butterknife.Unbinder;
  * create an instance of this fragment.
  */
 public class NewGroupFragment extends Fragment {
-    @BindView(R.id.addMembers)
-    Button addButton;
+
     @BindView(R.id.createGroups)
     Button createButton;
     private Unbinder unbinder;
@@ -82,13 +81,7 @@ public class NewGroupFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_new_group, container, false);
         unbinder = ButterKnife.bind(this, view);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavDirections action = NewGroupFragmentDirections.actionNewGroupFragmentToAddByIdFragment();
-                Navigation.findNavController(view).navigate(action);
-            }
-        });
+
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
