@@ -21,4 +21,14 @@
     <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/rounded_shape</item>
     </style>
+    <style name="AppTheme.RoundedCornerMaterialButtonDecline" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/decline_btn_shape</item>
+    </style>
+    <style name="roundImageView" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/round_image_shape</item>
+    </style>
+
+    <style name="roundImage" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/round_image</item>
+    </style>
 </resources>

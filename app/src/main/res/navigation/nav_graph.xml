@@ -92,8 +92,8 @@
             android:id="@+id/action_mainFragment_to_placesFragment"
             app:destination="@id/placesFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addByIdFragment"
@@ -108,7 +108,11 @@
         android:id="@+id/reqsFragment"
         android:name="com.delta.familyradar.ReqsFragment"
         android:label="fragment_reqs"
-        tools:layout="@layout/fragment_reqs" />
+        tools:layout="@layout/fragment_reqs" >
+        <action
+            android:id="@+id/action_reqsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/placesFragment"
         android:name="com.delta.familyradar.PlacesFragment"
@@ -137,4 +141,8 @@
         android:name="com.delta.familyradar.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.delta.familyradar.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
