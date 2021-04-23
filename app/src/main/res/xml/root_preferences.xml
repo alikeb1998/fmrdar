@@ -1,42 +1,65 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.delta.familyradar.ToolbarPreference
+        android:key="toolbar"
+        app:layout="@layout/setting_toolbar"
 
-    <PreferenceCategory app:title="Account Setting"
-        app:iconSpaceReserved="false">
+        />
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/messages_header"
+
+        >
 
         <PreferenceScreen
             app:iconSpaceReserved="false"
-            app:dialogTitle="Account"
-            app:key="signature"
+            app:key="@string/account"
             app:title="Account"
+
             app:useSimpleSummaryProvider="true" />
 
-        <ListPreference
+        <PreferenceScreen
             app:iconSpaceReserved="false"
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
-            app:title="@string/reply_title"
+            app:key="@string/manage"
+            app:title="Manage Groups"
             app:useSimpleSummaryProvider="true" />
+        <PreferenceScreen
+            app:dialogTitle="Account"
+            app:iconSpaceReserved="false"
+            app:key="@string/member"
+            app:title="Membership"
+            app:useSimpleSummaryProvider="true" />
+
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/sync_header"
-        app:iconSpaceReserved="false">
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Others">
 
-        <SwitchPreferenceCompat
+        <PreferenceScreen
             app:iconSpaceReserved="false"
             app:key="sync"
-            app:title="@string/sync_title" />
+            app:title="Privacy" />
 
-        <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
+        <PreferenceScreen
             app:dependency="sync"
+            app:iconSpaceReserved="false"
             app:key="attachment"
             app:summaryOff="@string/attachment_summary_off"
             app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
+            app:title="Support" />
+        <PreferenceScreen
+            app:iconSpaceReserved="false"
+            app:key="sync"
+            app:title="Vote" />
+        <PreferenceScreen
+            app:iconSpaceReserved="false"
+            app:key="sync"
+            app:title="Logout" />
+
 
     </PreferenceCategory>
+
 
 </PreferenceScreen>

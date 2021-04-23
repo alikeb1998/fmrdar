@@ -31,4 +31,7 @@
     <style name="roundImage" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/round_image</item>
     </style>
+    <style name="preferenceScreen" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/main_purpule</item>
+    </style>
 </resources>

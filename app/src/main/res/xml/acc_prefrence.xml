@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.delta.familyradar.ToolbarPreference
+        android:key="toolbarAcc"
+        app:layout="@layout/setting_toolbar"
+
+        />
+    <com.delta.familyradar.ImageViewPrefrence
+        android:key="image_preference"
+        app:layout="@layout/acc_custom"
+        />
+    <Preference
+        app:iconSpaceReserved="false"
+        android:key="changeUser"
+        android:title="Change Username"
+        />
+    <Preference
+    app:iconSpaceReserved="false"
+    android:key="changeEmail"
+    android:title="Change Email"
+    />
+    <Preference
+        app:iconSpaceReserved="false"
+        android:key="changePass"
+        android:title="Change Password"
+        />
+    <Preference
+        app:iconSpaceReserved="false"
+        android:key="emailVerify"
+        android:title="Verify Email"
+        />
+
+</PreferenceScreen>

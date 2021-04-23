@@ -137,12 +137,22 @@
         android:label="fragment_locate_on_map"
         tools:layout="@layout/fragment_locate_on_map" />
     <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.delta.familyradar.SettingFragment"
-        android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
-    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.delta.familyradar.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_accountSettingFragment"
+            app:destination="@id/accountSettingFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountSettingFragment"
+        android:name="com.delta.familyradar.AccountSettingFragment"
+        android:label="AccountSettingFragment" >
+        <action
+            android:id="@+id/action_accountSettingFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
 </navigation>
